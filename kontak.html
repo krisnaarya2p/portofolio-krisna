@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak | Komang Krisna Arya Adi Putra</title>
+    
+    <!-- Memanggil file CSS hasil kompilasi Tailwind CLI -->
+    <link href="./src/output.css" rel="stylesheet">
+    
+    <!-- Font Inter dari Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Konfigurasi Tema Kustom -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            50: '#f0f4f8',
+                            100: '#d9e2ec',
+                            800: '#102a43',
+                            900: '#0b1b3d',
+                            950: '#060d1e',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-navy-800 selection:text-white flex flex-col min-h-screen">
+
+    <!-- ==================== HEADER & NAVIGASI ==================== -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="text-xl font-bold tracking-tight text-navy-900">
+                <a href="index.html" class="hover:opacity-80 transition-opacity">Krisna<span class="text-blue-600">.dev</span></a>
+            </div>
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+                <a href="index.html#hero" class="hover:text-navy-900 transition-colors">Tentang</a>
+                <a href="keahlian.html" class="hover:text-navy-900 transition-colors">Keahlian</a>
+                <a href="project.html" class="hover:text-navy-900 transition-colors">Project</a>
+                <a href="kontak.html" class="hover: text-blue-700 font-semibold border-b-2 border-blue-700 pb-0.5 transition-colors">Kontak</a>
+            </nav>
+            <button id="menu-btn" class="md:hidden px-3 py-1.5 rounded-md border border-slate-300 text-xs font-semibold text-slate-700 hover:bg-slate-100" aria-label="Toggle Menu">Menu</button>
+        </div>
+    </header>
+
+    <!-- ==================== UTAMA: HALAMAN KONTAK ==================== -->
+    <main class="flex-grow flex items-center justify-center py-16 px-6">
+        <section id="contact" class="w-full max-w-xl">
+            <div class="text-center space-y-2 mb-10">
+                <p class="text-xs font-bold tracking-wider text-blue-700 uppercase">Mari Berdiskusi</p>
+                <h1 class="text-3xl font-extrabold text-navy-950">Hubungi Saya</h1>
+                <div class="w-10 h-1 bg-navy-900 mx-auto rounded-full"></div>
+            </div>
+
+            <form id="contact-form" class="space-y-5 bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+                <div>
+                    <label for="name" class="block text-sm font-medium text-slate-700 mb-1">Nama Lengkap</label>
+                    <input type="text" id="name" name="name" required placeholder="Masukkan nama Anda" class="w-full px-4 py-2.5 rounded-lg bg-slate-50 border border-slate-300 text-slate-900 text-sm focus:outline-none focus:border-navy-900 focus:ring-1 focus:ring-navy-900">
+                </div>
+                <div>
+                    <label for="email" class="block text-sm font-medium text-slate-700 mb-1">Email</label>
+                    <input type="email" id="email" name="email" required placeholder="nama@email.com" class="w-full px-4 py-2.5 rounded-lg bg-slate-50 border border-slate-300 text-slate-900 text-sm focus:outline-none focus:border-navy-900 focus:ring-1 focus:ring-navy-900">
+                </div>
+                <div>
+                    <label for="message" class="block text-sm font-medium text-slate-700 mb-1">Pesan</label>
+                    <textarea id="message" name="message" rows="4" required placeholder="Tuliskan pesan Anda di sini..." class="w-full px-4 py-2.5 rounded-lg bg-slate-50 border border-slate-300 text-slate-900 text-sm focus:outline-none focus:border-navy-900 focus:ring-1 focus:ring-navy-900"></textarea>
+                </div>
+                <button type="submit" class="w-full py-3 rounded-lg bg-navy-900 text-white font-semibold text-sm hover:bg-navy-800 transition-colors shadow-sm">Kirim Pesan</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="py-8 bg-navy-950 text-slate-400 text-center text-sm border-t border-navy-900">
+        <p>&copy; 2026 Krisna Arya. All rights reserved.</p>
+    </footer>
+
+    <!-- Menghubungkan ke file JavaScript terpisah -->
+    <script src="script.js"></script>
+</body>
+</html>

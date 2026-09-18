@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keahlian | Komang Krisna Arya Adi Putra</title>
+    
+    <!-- Tailwind CSS (Output Lokal) -->
+    <link href="./src/output.css" rel="stylesheet">
+    
+    <!-- Font Inter dari Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Konfigurasi Tema Kustom -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            50: '#f0f4f8',
+                            100: '#d9e2ec',
+                            800: '#102a43',
+                            900: '#0b1b3d',
+                            950: '#060d1e',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-navy-800 selection:text-white flex flex-col min-h-screen">
+
+    <!-- ==================== HEADER & NAVIGASI ==================== -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="text-xl font-bold tracking-tight text-navy-900">
+                <a href="index.html" class="hover:opacity-80 transition-opacity">Krisna<span class="text-blue-600">.dev</span></a>
+            </div>
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+                <a href="index.html#hero" class="hover:text-navy-900 transition-colors">Tentang</a>
+                <a href="keahlian.html" class="hover: text-blue-700 font-semibold border-b-2 border-blue-700 pb-0.5 transition-colors">Keahlian</a>
+                <a href="project.html" class="hover:text-navy-900 transition-colors">Project</a>
+                <a href="kontak.html" class="hover:text-navy-900 transition-colors">Kontak</a>
+            </nav>
+            <button id="menu-btn" class="md:hidden px-3 py-1.5 rounded-md border border-slate-300 text-xs font-semibold text-slate-700 hover:bg-slate-100" aria-label="Toggle Menu">Menu</button>
+        </div>
+    </header>
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <main class="flex-grow">
+        <section class="py-20 bg-white border-b border-slate-200 px-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center space-y-2 mb-12">
+                    <p class="text-xs font-bold tracking-wider text-blue-700 uppercase">Teknologi & Kemampuan</p>
+                    <h2 class="text-3xl font-extrabold text-navy-950">Keahlian Saya</h2>
+                    <div class="w-10 h-1 bg-navy-900 mx-auto rounded-full"></div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="p-6 rounded-xl bg-slate-50 border border-slate-200 hover:border-navy-800/40 transition-colors">
+                        <h3 class="text-lg font-bold text-navy-900 mb-1">HTML5</h3>
+                        <p class="text-xs text-slate-500">Struktur Web Semantik</p>
+                    </div>
+                    <div class="p-6 rounded-xl bg-slate-50 border border-slate-200 hover:border-navy-800/40 transition-colors">
+                        <h3 class="text-lg font-bold text-navy-900 mb-1">CSS3 & Tailwind</h3>
+                        <p class="text-xs text-slate-500">Desain Responsif & Tata Letak</p>
+                    </div>
+                    <div class="p-6 rounded-xl bg-slate-50 border border-slate-200 hover:border-navy-800/40 transition-colors">
+                        <h3 class="text-lg font-bold text-navy-900 mb-1">JavaScript</h3>
+                        <p class="text-xs text-slate-500">Interaktivitas & DOM Manipulation</p>
+                    </div>
+                    <div class="p-6 rounded-xl bg-slate-50 border border-slate-200 hover:border-navy-800/40 transition-colors">
+                        <h3 class="text-lg font-bold text-navy-900 mb-1">PHP</h3>
+                        <p class="text-xs text-slate-500">Pemrosesan Server-side Dasar</p>
+                    </div>
+                </div>
+
+                <!-- Tombol Kembali ke Halaman Utama -->
+                <div class="text-center mt-12">
+                    <a href="index.html" class="inline-block px-6 py-3 rounded-lg bg-navy-900 text-white font-medium shadow-sm hover:bg-navy-800 transition-colors text-sm">&larr; Kembali ke Beranda</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="py-8 bg-navy-950 text-slate-400 text-center text-sm border-t border-navy-900">
+        <p>&copy; 2026 Krisna Arya. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
