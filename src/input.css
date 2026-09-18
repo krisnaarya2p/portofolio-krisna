@@ -1,1 +1,28 @@
 @import "tailwindcss";
+@source "../";
+
+@theme {
+  --color-navy-50: #f0f4f8;
+  --color-navy-100: #d9e2ec;
+  --color-navy-800: #102a43;
+  --color-navy-900: #0b1b3d;
+  --color-navy-950: #060d1e;
+  --font-sans: 'Inter', sans-serif;
+}
+
+/* Custom Navy Utility Fallbacks */
+.bg-navy-50 { background-color: #f0f4f8; }
+.bg-navy-100 { background-color: #d9e2ec; }
+.bg-navy-800 { background-color: #102a43; }
+.bg-navy-900 { background-color: #0b1b3d; }
+.bg-navy-950 { background-color: #060d1e; }
+
+.hover\:bg-navy-800:hover { background-color: #102a43; }
+.hover\:bg-navy-900:hover { background-color: #0b1b3d; }
+
+.text-navy-900 { color: #0b1b3d; }
+.text-navy-950 { color: #060d1e; }
+.hover\:text-navy-900:hover { color: #0b1b3d; }
+
+.border-navy-100 { border-color: #d9e2ec; }
+.border-navy-900 { border-color: #0b1b3d; }

@@ -14,6 +14,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Konfigurasi Tema Kustom -->
+    <style>
+        .bg-navy-50 { background-color: #f0f4f8; }
+        .bg-navy-100 { background-color: #d9e2ec; }
+        .bg-navy-800 { background-color: #102a43; }
+        .bg-navy-900 { background-color: #0b1b3d; }
+        .bg-navy-950 { background-color: #060d1e; }
+        .text-navy-900 { color: #0b1b3d; }
+        .text-navy-950 { color: #060d1e; }
+        .border-navy-100 { border-color: #d9e2ec; }
+        .border-navy-900 { border-color: #0b1b3d; }
+        .hover\:bg-navy-800:hover { background-color: #102a43; }
+        .hover\:text-navy-900:hover { color: #0b1b3d; }
+    </style>
     <script>
         tailwind.config = {
             theme: {
@@ -39,17 +52,24 @@
 
     <!-- ==================== HEADER & NAVIGASI ==================== -->
     <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
-        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-            <div class="text-xl font-bold tracking-tight text-navy-900">
-                <a href="index.html" class="hover:opacity-80 transition-opacity">Krisna<span class="text-blue-600">.dev</span></a>
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between relative">
+            <!-- Bagian Kiri (Logo) -->
+            <div class="text-xl font-bold tracking-tight text-navy-900 z-10">
+                <a href="index.html" class="hover:opacity-80 transition-opacity">Krisna Arya</a>
             </div>
-            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+            
+            <!-- Bagian Tengah (Navigasi Desktop) -->
+            <nav class="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-8 text-sm font-medium text-slate-600">
                 <a href="index.html#hero" class="hover:text-navy-900 transition-colors">Tentang</a>
-                <a href="keahlian.html" class="hover: text-blue-700 font-semibold border-b-2 border-blue-700 pb-0.5 transition-colors">Keahlian</a>
+                <a href="keahlian.html" class="text-blue-700 font-semibold border-b-2 border-blue-700 pb-0.5 transition-colors">Keahlian</a>
                 <a href="project.html" class="hover:text-navy-900 transition-colors">Project</a>
                 <a href="kontak.html" class="hover:text-navy-900 transition-colors">Kontak</a>
             </nav>
-            <button id="menu-btn" class="md:hidden px-3 py-1.5 rounded-md border border-slate-300 text-xs font-semibold text-slate-700 hover:bg-slate-100" aria-label="Toggle Menu">Menu</button>
+
+            <!-- Bagian Kanan (Tombol Menu Mobile) -->
+            <div class="flex justify-end z-10">
+                <button id="menu-btn" class="md:hidden px-3 py-1.5 rounded-md border border-slate-300 text-xs font-semibold text-slate-700 hover:bg-slate-100" aria-label="Toggle Menu">Menu</button>
+            </div>
         </div>
     </header>
 
@@ -58,27 +78,54 @@
         <section class="py-20 bg-white border-b border-slate-200 px-6">
             <div class="max-w-6xl mx-auto">
                 <div class="text-center space-y-2 mb-12">
-                    <p class="text-xs font-bold tracking-wider text-blue-700 uppercase">Teknologi & Kemampuan</p>
+                    <p class="text-xs font-bold tracking-wider text-blue-700 uppercase">Portofolio Skill</p>
                     <h2 class="text-3xl font-extrabold text-navy-950">Keahlian Saya</h2>
                     <div class="w-10 h-1 bg-navy-900 mx-auto rounded-full"></div>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-                    <div class="p-6 rounded-xl bg-slate-50 border border-slate-200 hover:border-navy-800/40 transition-colors">
-                        <h3 class="text-lg font-bold text-navy-900 mb-1">HTML5</h3>
-                        <p class="text-xs text-slate-500">Struktur Web Semantik</p>
+                <!-- Kelompok 1: Web Development -->
+                <div class="mb-12">
+                    <h3 class="text-xl font-bold text-navy-900 mb-6 flex items-center gap-2 border-l-4 border-blue-700 pl-3">
+                        Web Development
+                    </h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+                        <div class="p-6 rounded-xl bg-slate-50 border border-slate-200 hover:border-navy-800/40 transition-colors">
+                            <h4 class="text-lg font-bold text-navy-900 mb-1">HTML5</h4>
+                            <p class="text-xs text-slate-500">Struktur Web Semantik</p>
+                        </div>
+                        <div class="p-6 rounded-xl bg-slate-50 border border-slate-200 hover:border-navy-800/40 transition-colors">
+                            <h4 class="text-lg font-bold text-navy-900 mb-1">CSS3 & Tailwind</h4>
+                            <p class="text-xs text-slate-500">Desain Responsif & Tata Letak</p>
+                        </div>
+                        <div class="p-6 rounded-xl bg-slate-50 border border-slate-200 hover:border-navy-800/40 transition-colors">
+                            <h4 class="text-lg font-bold text-navy-900 mb-1">JavaScript</h4>
+                            <p class="text-xs text-slate-500">Interaktivitas & DOM Manipulation</p>
+                        </div>
+                        <div class="p-6 rounded-xl bg-slate-50 border border-slate-200 hover:border-navy-800/40 transition-colors">
+                            <h4 class="text-lg font-bold text-navy-900 mb-1">PHP</h4>
+                            <p class="text-xs text-slate-500">Pemrosesan Server-side Dasar</p>
+                        </div>
                     </div>
-                    <div class="p-6 rounded-xl bg-slate-50 border border-slate-200 hover:border-navy-800/40 transition-colors">
-                        <h3 class="text-lg font-bold text-navy-900 mb-1">CSS3 & Tailwind</h3>
-                        <p class="text-xs text-slate-500">Desain Responsif & Tata Letak</p>
-                    </div>
-                    <div class="p-6 rounded-xl bg-slate-50 border border-slate-200 hover:border-navy-800/40 transition-colors">
-                        <h3 class="text-lg font-bold text-navy-900 mb-1">JavaScript</h3>
-                        <p class="text-xs text-slate-500">Interaktivitas & DOM Manipulation</p>
-                    </div>
-                    <div class="p-6 rounded-xl bg-slate-50 border border-slate-200 hover:border-navy-800/40 transition-colors">
-                        <h3 class="text-lg font-bold text-navy-900 mb-1">PHP</h3>
-                        <p class="text-xs text-slate-500">Pemrosesan Server-side Dasar</p>
+                </div>
+
+                <!-- Kelompok 2: Multimedia & Creative Freelance -->
+                <div>
+                    <h3 class="text-xl font-bold text-navy-900 mb-6 flex items-center gap-2 border-l-4 border-blue-700 pl-3">
+                        Multimedia & Creative Production
+                    </h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                        <div class="p-6 rounded-xl bg-slate-50 border border-slate-200 hover:border-navy-800/40 transition-colors">
+                            <h4 class="text-lg font-bold text-navy-900 mb-1">Desain Grafis</h4>
+                            <p class="text-xs text-slate-500">Pembuatan Poster, Banner, & Visual Branding</p>
+                        </div>
+                        <div class="p-6 rounded-xl bg-slate-50 border border-slate-200 hover:border-navy-800/40 transition-colors">
+                            <h4 class="text-lg font-bold text-navy-900 mb-1">Video & Photo Editor</h4>
+                            <p class="text-xs text-slate-500">Video Cutting, Color Grading, & Photo Retouching</p>
+                        </div>
+                        <div class="p-6 rounded-xl bg-slate-50 border border-slate-200 hover:border-navy-800/40 transition-colors">
+                            <h4 class="text-lg font-bold text-navy-900 mb-1">Fotografi & Videografi</h4>
+                            <p class="text-xs text-slate-500">Pengambilan Gambar Konten Kreatif & Acara</p>
+                        </div>
                     </div>
                 </div>
 

@@ -14,6 +14,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Konfigurasi Tema Kustom -->
+    <style>
+        .bg-navy-50 { background-color: #f0f4f8; }
+        .bg-navy-100 { background-color: #d9e2ec; }
+        .bg-navy-800 { background-color: #102a43; }
+        .bg-navy-900 { background-color: #0b1b3d; }
+        .bg-navy-950 { background-color: #060d1e; }
+        .text-navy-900 { color: #0b1b3d; }
+        .text-navy-950 { color: #060d1e; }
+        .border-navy-100 { border-color: #d9e2ec; }
+        .border-navy-900 { border-color: #0b1b3d; }
+        .hover\:bg-navy-800:hover { background-color: #102a43; }
+        .hover\:text-navy-900:hover { color: #0b1b3d; }
+    </style>
     <script>
         tailwind.config = {
             theme: {
@@ -39,45 +52,169 @@
 
     <!-- ==================== HEADER & NAVIGASI ==================== -->
     <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
-        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-            <div class="text-xl font-bold tracking-tight text-navy-900">
-                <a href="index.html" class="hover:opacity-80 transition-opacity">Krisna<span class="text-blue-600">.dev</span></a>
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between relative">
+            <!-- Bagian Kiri (Logo) -->
+            <div class="text-xl font-bold tracking-tight text-navy-900 z-10">
+                <a href="index.html" class="hover:opacity-80 transition-opacity">Krisna Arya</a>
             </div>
-            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+            
+            <!-- Bagian Tengah (Navigasi Desktop) -->
+            <nav class="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-8 text-sm font-medium text-slate-600">
                 <a href="index.html#hero" class="hover:text-navy-900 transition-colors">Tentang</a>
                 <a href="keahlian.html" class="hover:text-navy-900 transition-colors">Keahlian</a>
                 <a href="project.html" class="hover:text-navy-900 transition-colors">Project</a>
-                <a href="kontak.html" class="hover: text-blue-700 font-semibold border-b-2 border-blue-700 pb-0.5 transition-colors">Kontak</a>
+                <a href="kontak.html" class="text-blue-700 font-semibold border-b-2 border-blue-700 pb-0.5 transition-colors">Kontak</a>
             </nav>
-            <button id="menu-btn" class="md:hidden px-3 py-1.5 rounded-md border border-slate-300 text-xs font-semibold text-slate-700 hover:bg-slate-100" aria-label="Toggle Menu">Menu</button>
+
+            <!-- Bagian Kanan (Tombol Menu Mobile) -->
+            <div class="flex justify-end z-10">
+                <button id="menu-btn" class="md:hidden px-3 py-1.5 rounded-md border border-slate-300 text-xs font-semibold text-slate-700 hover:bg-slate-100" aria-label="Toggle Menu">Menu</button>
+            </div>
         </div>
     </header>
 
     <!-- ==================== UTAMA: HALAMAN KONTAK ==================== -->
-    <main class="flex-grow flex items-center justify-center py-16 px-6">
-        <section id="contact" class="w-full max-w-xl">
-            <div class="text-center space-y-2 mb-10">
+    <main class="grow py-16 px-6">
+        <div class="max-w-6xl mx-auto">
+            <!-- Header Halaman -->
+            <div class="text-center space-y-2 mb-12">
                 <p class="text-xs font-bold tracking-wider text-blue-700 uppercase">Mari Berdiskusi</p>
-                <h1 class="text-3xl font-extrabold text-navy-950">Hubungi Saya</h1>
+                <h1 class="text-3xl md:text-4xl font-extrabold text-navy-950">Hubungi Saya</h1>
                 <div class="w-10 h-1 bg-navy-900 mx-auto rounded-full"></div>
+                <p class="text-slate-600 text-sm md:text-base max-w-xl mx-auto pt-2 leading-relaxed">
+                    Tertarik berkolaborasi dalam proyek web development, multimedia, atau sekadar ingin bertukar ide? Silakan hubungi saya melalui formulir atau kontak berikut.
+                </p>
             </div>
 
-            <form id="contact-form" class="space-y-5 bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
-                <div>
-                    <label for="name" class="block text-sm font-medium text-slate-700 mb-1">Nama Lengkap</label>
-                    <input type="text" id="name" name="name" required placeholder="Masukkan nama Anda" class="w-full px-4 py-2.5 rounded-lg bg-slate-50 border border-slate-300 text-slate-900 text-sm focus:outline-none focus:border-navy-900 focus:ring-1 focus:ring-navy-900">
+            <!-- Grid 2 Kolom Layout Baru -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+                <!-- ==================== KOLOM KIRI: DETAIL KONTAK & INFORMASI ==================== -->
+                <div class="lg:col-span-5 space-y-6">
+                    <!-- Kartu Info Kontak -->
+                    <div class="bg-white p-7 rounded-2xl border border-slate-200 shadow-sm space-y-6">
+                        <div class="space-y-1">
+                            <h2 class="text-lg font-bold text-navy-900">Saluran Komunikasi</h2>
+                            <p class="text-xs text-slate-500">Anda dapat menghubungi saya secara langsung melalui:</p>
+                        </div>
+
+                        <div class="space-y-4">
+                            <!-- Item 1: Email -->
+                            <div class="flex items-start gap-4 p-3 rounded-xl bg-slate-50 border border-slate-100 hover:border-slate-200 transition-colors">
+                                <div class="w-10 h-10 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center shrink-0">
+                                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                                </div>
+                                <div class="space-y-0.5">
+                                    <span class="text-xs font-semibold text-slate-500 block">Email Resmi</span>
+                                    <a href="mailto:krisnaarya.dev@gmail.com" class="text-sm font-bold text-navy-900 hover:text-blue-700 transition-colors break-all">krisnaarya.dev@gmail.com</a>
+                                </div>
+                            </div>
+
+                            <!-- Item 2: Lokasi -->
+                            <div class="flex items-start gap-4 p-3 rounded-xl bg-slate-50 border border-slate-100 hover:border-slate-200 transition-colors">
+                                <div class="w-10 h-10 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0">
+                                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                                </div>
+                                <div class="space-y-0.5">
+                                    <span class="text-xs font-semibold text-slate-500 block">Domisili</span>
+                                    <span class="text-sm font-bold text-navy-900">Bali, Indonesia</span>
+                                </div>
+                            </div>
+
+                            <!-- Item 3: Status / Ketersediaan -->
+                            <div class="flex items-start gap-4 p-3 rounded-xl bg-slate-50 border border-slate-100 hover:border-slate-200 transition-colors">
+                                <div class="w-10 h-10 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center shrink-0">
+                                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                                </div>
+                                <div class="space-y-0.5">
+                                    <span class="text-xs font-semibold text-slate-500 block">Ketersediaan</span>
+                                    <div class="flex items-center gap-1.5 pt-0.5">
+                                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                                        <span class="text-xs font-bold text-emerald-700">Terbuka untuk Freelance & Kolaborasi</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Kartu Profil / Sosmed Gelap Elegan -->
+                    <div class="bg-navy-900 rounded-2xl p-7 text-white space-y-4 border border-navy-800 shadow-sm">
+                        <div class="space-y-1">
+                            <span class="text-xs font-semibold text-blue-300 uppercase tracking-wider">Sosial Media & Jaringan</span>
+                            <h3 class="text-base font-bold text-white">Ikuti Portofolio Online</h3>
+                        </div>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            Terhubung juga melalui media sosial untuk melihat pembaruan karya kreatif desain grafis, video, serta proyek web terbaru.
+                        </p>
+                        <div class="flex items-center gap-3 pt-2">
+                            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 rounded-lg bg-navy-800 hover:bg-navy-950 border border-slate-700 text-xs font-medium text-slate-200 transition-colors flex items-center gap-2">
+                                <span>GitHub</span>
+                            </a>
+                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 rounded-lg bg-navy-800 hover:bg-navy-950 border border-slate-700 text-xs font-medium text-slate-200 transition-colors flex items-center gap-2">
+                                <span>LinkedIn</span>
+                            </a>
+                            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2 rounded-lg bg-navy-800 hover:bg-navy-950 border border-slate-700 text-xs font-medium text-slate-200 transition-colors flex items-center gap-2">
+                                <span>Instagram</span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <label for="email" class="block text-sm font-medium text-slate-700 mb-1">Email</label>
-                    <input type="email" id="email" name="email" required placeholder="nama@email.com" class="w-full px-4 py-2.5 rounded-lg bg-slate-50 border border-slate-300 text-slate-900 text-sm focus:outline-none focus:border-navy-900 focus:ring-1 focus:ring-navy-900">
+
+                <!-- ==================== KOLOM KANAN: FORMULIR INTERAKTIF ==================== -->
+                <div class="lg:col-span-7">
+                    <div class="bg-white p-8 sm:p-9 rounded-2xl border border-slate-200 shadow-sm space-y-6">
+                        <div class="space-y-1 border-b border-slate-100 pb-4">
+                            <h2 class="text-xl font-bold text-navy-900">Kirimkan Pesan</h2>
+                            <p class="text-xs text-slate-500">Tinggalkan pesan Anda dan saya akan merespons sesegera mungkin.</p>
+                        </div>
+
+                        <!-- Feedback Alert -->
+                        <div id="form-feedback" class="hidden p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-medium flex items-center gap-3">
+                            <svg class="w-5 h-5 text-emerald-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            <span>Terima kasih! Pesan Anda telah berhasil terkirim. Saya akan segera menghubungi Anda kembali.</span>
+                        </div>
+
+                        <form id="contact-form" class="space-y-5">
+                            <!-- Grid Baris 1: Nama & Email -->
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="name" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Nama Lengkap <span class="text-red-500">*</span></label>
+                                    <input type="text" id="name" name="name" required placeholder="Contoh: Budi Santoso" class="w-full px-4 py-2.5 rounded-lg bg-slate-50 border border-slate-300 text-slate-900 text-sm focus:outline-none focus:border-navy-900 focus:ring-1 focus:ring-navy-900 transition-all">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Alamat Email <span class="text-red-500">*</span></label>
+                                    <input type="email" id="email" name="email" required placeholder="nama@email.com" class="w-full px-4 py-2.5 rounded-lg bg-slate-50 border border-slate-300 text-slate-900 text-sm focus:outline-none focus:border-navy-900 focus:ring-1 focus:ring-navy-900 transition-all">
+                                </div>
+                            </div>
+
+                            <!-- Baris 2: Topik / Subjek -->
+                            <div>
+                                <label for="subject" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Kategori / Topik Pembahasan</label>
+                                <select id="subject" name="subject" class="w-full px-4 py-2.5 rounded-lg bg-slate-50 border border-slate-300 text-slate-900 text-sm focus:outline-none focus:border-navy-900 focus:ring-1 focus:ring-navy-900 transition-all">
+                                    <option value="web-dev">Tawaran Proyek Web Development</option>
+                                    <option value="multimedia">Jasa Desain Grafis & Multimedia</option>
+                                    <option value="collaboration">Kolaborasi / Rekan Tim Proyek</option>
+                                    <option value="general">Pertanyaan Umum Lainnya</option>
+                                </select>
+                            </div>
+
+                            <!-- Baris 3: Pesan -->
+                            <div>
+                                <label for="message" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Isi Pesan <span class="text-red-500">*</span></label>
+                                <textarea id="message" name="message" rows="5" required placeholder="Jelaskan kebutuhan, gambaran proyek, atau pesan yang ingin Anda sampaikan..." class="w-full px-4 py-2.5 rounded-lg bg-slate-50 border border-slate-300 text-slate-900 text-sm focus:outline-none focus:border-navy-900 focus:ring-1 focus:ring-navy-900 transition-all leading-relaxed"></textarea>
+                            </div>
+
+                            <!-- Tombol Kirim -->
+                            <div class="pt-2">
+                                <button type="submit" class="w-full py-3 px-6 rounded-lg bg-navy-900 text-white font-semibold text-sm hover:bg-navy-800 transition-colors shadow-sm flex items-center justify-center gap-2 cursor-pointer">
+                                    <span>Kirimkan Pesan Sekarang</span>
+                                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-                <div>
-                    <label for="message" class="block text-sm font-medium text-slate-700 mb-1">Pesan</label>
-                    <textarea id="message" name="message" rows="4" required placeholder="Tuliskan pesan Anda di sini..." class="w-full px-4 py-2.5 rounded-lg bg-slate-50 border border-slate-300 text-slate-900 text-sm focus:outline-none focus:border-navy-900 focus:ring-1 focus:ring-navy-900"></textarea>
-                </div>
-                <button type="submit" class="w-full py-3 rounded-lg bg-navy-900 text-white font-semibold text-sm hover:bg-navy-800 transition-colors shadow-sm">Kirim Pesan</button>
-            </form>
-        </section>
+            </div>
+        </div>
     </main>
 
     <!-- ==================== FOOTER ==================== -->
